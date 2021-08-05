@@ -36,6 +36,13 @@ namespace ReverseAStringMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Reverse(Palindrome palindrome)
+        {
+            return View(palindrome);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
